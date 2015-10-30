@@ -52,6 +52,7 @@ set hlsearch
 set nrformats=
 set list
 set listchars=trail:·,precedes:«,extends:»
+set clipboard=unnamed
 
 let mapleader=","
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
