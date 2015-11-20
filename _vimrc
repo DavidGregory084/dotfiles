@@ -21,6 +21,7 @@ Plugin 'myusuf3/numbers.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'terryma/vim-smooth-scroll'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -53,8 +54,14 @@ set nrformats=
 set list
 set listchars=trail:·,precedes:«,extends:»
 set clipboard=unnamed
+set shortmess=a
+set cmdheight=2
 
 let mapleader=","
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <esc> :nohlsearch<CR>
@@ -75,7 +82,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let NERDTreeShowHidden=1
 let g:scala_sort_across_groups=1
 let g:airline_powerline_fonts=1
-let g:js_indent_typescript = 1
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 cd $HOME/jhc
