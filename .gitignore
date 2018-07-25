@@ -1,7 +1,0 @@
-# Ignore everything
-*
-
-# Except for files that start with _ and .
-!_*
-!.*
-
