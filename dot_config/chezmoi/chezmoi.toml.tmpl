@@ -1,0 +1,7 @@
+[data]
+    name = "{{ .name }}"
+    email = "{{ .email }}"
+    signingkey = "{{ .signingkey }}"
+[diff]
+    command = "delta"
+    args = ["{{ "{{" }} .Destination {{ "}}" }}", "{{ "{{" }} .Target {{ "}}" }}"]

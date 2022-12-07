@@ -10,7 +10,7 @@ end
 
 set -gx EDITOR nvim
 set -gx VISUAL nvim
-set -gx PAGER less
+set -gx PAGER less -R
 set -gx JAVA_HOME $(/usr/libexec/java_home -v 17)
 
 fish_add_path $HOME/.cargo/bin
