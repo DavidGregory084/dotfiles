@@ -1,0 +1,11 @@
+{{ $name := promptStringOnce . "name" "name" -}}
+{{ $email := promptStringOnce . "email" "email" -}}
+
+[data]
+    name = "{{ $name }}"
+    email = "{{ $email }}"
+    signingkey = "{{ .chezmoi.homeDir }}/.ssh/id_ed25519.pub"
+[diff]
+    command = "delta"
+    pager = "delta"
+    args = ["{{ "{{" }} .Destination {{ "}}" }}", "{{ "{{" }} .Target {{ "}}" }}"]
